@@ -1,6 +1,10 @@
 import os 
 
-restaurantes = ['Pizza', 'Sushi']
+# Dicionario de restaurantes
+restaurantes = [{'nome':'Praça', 'categoria':'Japonesa', 'ativo':False},
+                {'nome':'Pizza Suprema', 'categoria':'Pizza','ativo':True},
+                {'nome':'Cantina', 'categoria':'Italiano', 'ativo':False}]
+
 
 # Nome do Programa
 def exibir_nome_do_programa():
@@ -51,7 +55,11 @@ def cadastrar_novo_restaurante():
 def listar_restaurantes():
     exibir_subtitulo('Listando os restaurantes')
     for restaurante in restaurantes:
-        print(f'.{restaurante}')
+        nome_restaurante = restaurante['nome']
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f'- {nome_restaurante} | {categoria} | {ativo}')
+
     voltar_ao_menu_principal()
 
 # Escolher a opção da interação com o programa
